@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Engenheira de Software especializada em soluções robustas, Clean Code e performance. Conheça meu trabalho.">
+    <meta property="og:title" content="Paloma Lima | Engenheira de Software">
+    <meta property="og:description" content="Engenharia e Performance: Desenvolvimento de sistemas escaláveis e consultoria técnica.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="link-da-sua-foto-de-perfil.jpg"> <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="shortcut icon" href="not.jpeg" type="image/x-icon">
+
     <title>Paloma Lima | Engenheira de Software</title>
     
     <!-- Fontes e Ícones -->
@@ -27,6 +36,13 @@
             box-sizing: border-box; 
             font-family: 'Montserrat', sans-serif; 
         }
+
+html, body {
+    max-width: 100vw; /* Garante que o site nunca seja maior que a largura da tela */
+    overflow-x: hidden; /* Corta qualquer coisa que tente sair pela lateral */
+    width: 100%;
+}
+
 
         body { 
             background-color: var(--primary-bg); 
@@ -183,6 +199,7 @@
     to { transform: rotate(360deg); } 
 }
 
+
         /* --- SHOWCASE GRID (MOSAICO) --- */
         .showcase-grid {
             padding: 80px 10%;
@@ -225,6 +242,144 @@
 
         .showcase-overlay p { color: var(--accent-blue); font-weight: 800; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 10px; }
         .showcase-overlay h3 { font-size: 2rem; font-weight: 900; }
+
+
+
+       /*PARTE DO LAN E DO DAST*/
+
+       /* Container que segura os dois cards lado a lado */
+/* Container que segura os dois cards lado a lado */
+.projects-container {
+    display: grid;
+    /* Força exatamente 2 colunas em telas grandes */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; /* Diminuí o espaço para caber melhor */
+    padding: 20px 0;
+    max-width: 1000px; /* Limita a largura total para não espalhar muito */
+    margin: 0 auto; /* Centraliza o container na tela */
+}
+
+/* Estilo do Card (Mais compacto) */
+.project-card {
+    background: #111116; 
+    border-radius: 15px; /* Bordas um pouco menores */
+    overflow: hidden; 
+    border: 1px solid #1a1a1a;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px); 
+    border-color: #007bff; 
+}
+
+/* AJUSTE CRÍTICO DA IMAGEM (Para o Mac aparecer inteiro) */
+.project-image {
+    width: 100%;
+    height: 150px; /* Altura bem menor para forçar a redução */
+    object-fit: contain; /* ESSENCIAL: Faz a imagem inteira caber dentro da altura, sem cortar */
+    background-color: #000; /* Preenche as laterais com preto se a imagem for estreita */
+    padding: 10px 0; /* Dá um respiro para o Mac não encostar nas bordas */
+}
+
+/* Conteúdo interno do card (Mais compacto) */
+.project-content {
+    padding: 15px; /* Menos padding */
+}
+
+.project-content h3 {
+    color: #fff;
+    margin-bottom: 8px;
+    font-size: 1.2rem; /* Fonte um pouco menor */
+}
+
+.project-content p {
+    color: #a0a0a0;
+    font-size: 0.85rem; /* Fonte menor */
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* Estilo das Tags (Pílulas azuis) */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    background: rgba(0, 123, 255, 0.1);
+    color: #7a8fff;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    border: 1px solid rgba(0, 123, 255, 0.2);
+}
+
+/* Responsividade para Celulares */
+/* Responsividade Total para Celulares */
+@media screen and (max-width: 768px) {
+    .projects-container {
+        grid-template-columns: 1fr !important; /* Força 1 coluna */
+        display: grid !important;
+        padding: 10px;
+    }
+
+    .project-card {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .project-image {
+        height: 180px; /* Aumenta um pouco a imagem no celular para ficar melhor */
+    }
+}
+       
+       
+        /*PARTE DAS TECNOLOGIA QUE USO*/
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(minmax(4, 1fr));
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.tech-card {
+    background: #111116;
+    padding: 40px 20px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #1a1a1a;
+    transition: 0.3s;
+}
+
+.tech-card:hover {
+    border-color: var(--accent-blue);
+    transform: translateY(-5px);
+}
+
+.tech-card i {
+    font-size: 3rem;
+    color: var(--accent-blue);
+    margin-bottom: 20px;
+    display: block;
+}
+
+.tech-card h3 { font-size: 1.2rem; margin-bottom: 10px; font-weight: 800; }
+.tech-card p { font-size: 0.85rem; color: #666; }
+
+/* Ajuste de responsividade para não quebrar em telas menores */
+@media (max-width: 1100px) {
+    .tech-grid { grid-template-columns: repeat(2, 1fr); } /* 2x4 em tablets */
+}
+
+@media (max-width: 600px) {
+    .tech-grid { grid-template-columns: 1fr; } /* 1x8 em celulares */
+}
+
 
         /* --- SECÇÃO APP (ÍCONES GIGANTES + TELEMÓVEL) --- */
         .app-section-flex {
@@ -326,6 +481,41 @@
         .process-title { font-size: 2rem; font-weight: 700; margin-bottom: 10px; }
         .process-desc { color: var(--text-gray); font-size: 1.1rem; max-width: 600px; }
 
+/* --- FOOTER --- */ 
+
+.contact-container {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: transform 0.2s, opacity 0.3s;
+}
+
+.contact-btn:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+
+/* Cores Oficiais */
+.github { background-color: #24292e; }
+.whatsapp { background-color: #25d366; }
+.instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+.linkedin { background-color: #0077b5; }
+
         /* --- FOOTER --- */
         .footer-signature {
             padding: 100px 20px; text-align: center; background: #000;
@@ -397,10 +587,9 @@
         height: 240px;
     }
 }
-
-
-
     </style>
+
+
 </head>
 <body>
 
@@ -433,7 +622,39 @@
     </div>
 
     <div style="font-size: 0.9rem; opacity: 0.6; letter-spacing: 4px; font-weight: 700;">
-        BRUMADO - BAHIA | DISPONÍVEL PARA PROJETOS
+        BRASIL| DISPONÍVEL PARA PROJETOS
+    </div>
+</section>
+
+<section id="sobre" style="padding: 100px 10%; background: #0a0a0a;">
+    <div style="display: flex; align-items: center; gap: 50px; flex-wrap: wrap;">
+        
+        <div style="flex: 1; min-width: 300px; position: relative;">
+            <img src="img.png" alt="Paloma Lima" 
+                 style="width: 100%; 
+                        /* Arredonda superior-direita e inferior-esquerda */
+                        border-radius: 110px 0 130px 0; 
+                        filter: grayscale(20%); 
+                        border: 1px solid #333;
+                        display: block;
+                        /* Efeito de desfoque/sumiço na base para esconder a mão */
+                        -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+                        mask-image: linear-gradient(to bottom, black 85%, transparent 100%);">
+            
+            <div style="position: absolute; bottom: -10px; right: -10px; width: 50px; height: 50px; border-bottom: 4px solid var(--accent-blue); border-right: 4px solid var(--accent-blue); border-radius: 0 0 15px 0;"></div>
+        </div>
+
+        <div style="flex: 1.5; min-width: 300px;">
+            <h2 style="color: var(--accent-blue); font-size: 2.5rem; margin-bottom: 20px; font-weight: 900; text-transform: uppercase;">
+                Engenharia além do código.
+            </h2>
+            <p style="font-size: 1.2rem; color: #a0a0a0; margin-bottom: 20px; line-height: 1.8;">
+                Para mim, desenvolver um site é como <span style="color: white; font-weight: 700;">erguer um edifício</span>. Tudo começa na base, no planejamento da arquitetura, e vai crescendo tijolo por tijolo até se tornar uma estrutura robusta e imponente na tela.
+            </p>
+            <p style="font-size: 1.2rem; color: #a0a0a0; line-height: 1.8;">
+                Aprendi com meus mestres que programar está longe de ser difícil: <span style="color: var(--accent-blue); font-weight: 700;">é a arte de resolver problemas</span>. Meu compromisso é entregar soluções que não apenas funcionem, mas que tenham solidez, identidade e rigor técnico.
+            </p>
+        </div>
     </div>
 </section>
 
@@ -455,9 +676,94 @@
         </div>
     </section>
 
+
+
+    <!--PARTE DA LANDING PAGE E DO DASHBOARD-->
+<div class="projects-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+    
+    <div class="project-card">
+        <img src="lang.png" alt="Landing Page" class="project-image">
+        <div class="project-content">
+            <h3>Landing Page Premium</h3>
+            <p>Foco em performance, conversão e interfaces que encantam o usuário final.</p>
+            <div class="project-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">JavaScript</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <img src="das.png" alt="Dashboards" class="project-image">
+        <div class="project-content">
+            <h3>Sistemas de Monitoramento</h3>
+            <p>Criação de interfaces para visualização de métricas e controle de processos internos.</p>
+            <div class="project-tags">
+                <span class="tag">Engenharia</span>
+                <span class="tag">Interfaces</span>
+                <span class="tag">Chart.js</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!--PARTE DA TECNOLOGIA QUE SEI USAR-->
+<div class="tech-grid">
+    <div class="tech-card" data-aos="zoom-in">
+        <i class="fab fa-html5"></i>
+        <h3>HTML5</h3>
+        <p>Semântica e Acessibilidade</p>
+    </div>
+
+    <div class="tech-card" data-aos="zoom-in" data-aos-delay="100">
+        <i class="fab fa-css3-alt"></i>
+        <h3>CSS3</h3>
+        <p>Layouts Modernos e Flex/Grid</p>
+    </div>
+
+    <div class="tech-card" data-aos="zoom-in" data-aos-delay="200">
+        <i class="fab fa-js"></i>
+        <h3>JavaScript</h3>
+        <p>Lógica e Interatividade ES6+</p>
+    </div>
+
+    <div class="tech-card" data-aos="zoom-in" data-aos-delay="300">
+        <i class="fas fa-magic"></i>
+        <h3>Animations</h3>
+        <p>Experiências Fluídas (AOS/CSS)</p>
+    </div>
+
+    <div class="tech-card" data-aos="zoom-in" data-aos-delay="400">
+        <i class="fab fa-github"></i>
+        <h3>GitHub</h3>
+        <p>Controle de Versão e Código</p>
+    </div>
+
+    <div class="tech-card" data-aos="zoom-in" data-aos-delay="500">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>Responsividade</h3>
+        <p>Otimizado para Smartphones</p>
+    </div>
+
+    <div class="tech-card" data-aos="zoom-in" data-aos-delay="600">
+        <i class="fas fa-cloud-upload-alt"></i>
+        <h3>Vercel & Netlify</h3>
+        <p>Deploy Contínuo e Performance</p>
+    </div>
+
+    <div class="tech-card" data-aos="zoom-in" data-aos-delay="700">
+        <i class="fas fa-drafting-compass"></i>
+        <h3>Arquitetura</h3>
+        <p>Sistemas Robustos e Escaláveis</p>
+    </div>
+</div>
+
     <!-- App Section (Ícones Gigantes) -->
-    <section class="app-section-flex">
-        <div class="app-flex-container">
+    <section class="app-section-flex" >
+        <div class="app-flex-container" data-aos="fade-right">
             <div class="app-info-column">
                 <div class="info-block">
                     <div class="info-icon"><i class="fas fa-layer-group"></i></div>
@@ -476,7 +782,7 @@
             </div>
 
             <div class="app-phone-column">
-                <div class="phone-mockup">
+                <div class="phone-mockup"data-aos="fade-left">
                     <div class="phone-screen">
                         <div style="color: white; font-size: 4rem; font-weight: 900; margin-bottom: 20px;">PL.</div>
                         <div style="color: #666; font-size: 1.5rem; letter-spacing: 2px;">SYSTEM READY</div>
@@ -517,12 +823,93 @@
         </div>
     </section>
 
+    <section id="filosofia" style="padding: 100px 10%; background: #0a0a0a;">
+    <div style="display: flex; align-items: center; gap: 50px; flex-wrap: wrap;" data-aos="fade-up">
+        
+        <div style="flex: 1; min-width: 300px;">
+            <img src="sobremim.jpeg" alt="Paloma Lima - Engenheira de Software" 
+                 style="width: 100%; /* Arredonda superior-direita e inferior-esquerda */
+                        border-radius: 110px 0 130px 0; filter: grayscale(30%); border: 1px solid #222; transition: 0.3s; box-shadow: 0 10px 20px rgba(0,0,0,0.3);">
+        </div>
+
+        <div style="flex: 1.5; min-width: 300px;">
+            <div class="section-tag" style="margin-bottom: 20px;">Visão & Contexto</div>
+            <h2 style="font-size: 2.5rem; margin-bottom: 30px; font-weight: 900; text-transform: uppercase;">A Responsabilidade na Engenharia</h2>
+            
+            <p style="font-size: 1.1rem; color: #a0a0a0; margin-bottom: 40px; line-height: 1.8;">
+                Para mim, a Engenharia de Software vai além de linhas de código; é uma ferramenta poderosa para moldar o nosso mundo. Em uma era de avanços acelerados, meu compromisso é criar soluções tecnológicas que sejam não apenas eficientes e inovadoras, mas também éticas, transparentes e acessíveis, contribuindo para uma sociedade mais informada e equitativa.
+            </p>
+
+            <div style="background: rgba(0, 123, 255, 0.05); padding: 30px; border-radius: 15px; border-left: 4px solid var(--accent-blue); position: relative;">
+                <i class="fas fa-quote-left" style="color: var(--accent-blue); font-size: 1.5rem; opacity: 0.5; position: absolute; top: 20px; left: 20px;"></i>
+                <p style="font-style: italic; color: #ccc; font-size: 1.2rem; line-height: 1.8; margin-bottom: 15px; padding-left: 30px; padding-right: 30px;">
+                    "Vivemos em uma sociedade extremamente dependente da ciência e da tecnologia, na qual quase ninguém sabe nada sobre ciência e tecnologia. Isso é uma receita clara para o desastre."
+                </p>
+                <p style="text-align: right; color: var(--accent-blue); font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;">
+                    &mdash; Carl Sagan
+                </p>
+                <i class="fas fa-quote-right" style="color: var(--accent-blue); font-size: 1.5rem; opacity: 0.5; position: absolute; bottom: 20px; right: 20px;"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
     <!-- Footer -->
-    <footer class="footer-signature">
-        <p style="font-size: 1.5rem; color: white; font-weight: 900;">PALOMA LIMA</p>
-        <p style="font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; color: #555;">&copy; 2024 Engenharia de Software.</p>
-    </footer>
+
+    <section id="contato" style="padding: 100px 10%; background: #050505; text-align: center;">
+    <h2 style="font-size: 2.5rem; margin-bottom: 10px;">Contato</h2>
+    <div style="width: 50px; height: 3px; background: var(--accent-blue); margin: 0 auto 30px;"></div>
+    
+    <p style="color: #a0a0a0; margin-bottom: 40px; font-size: 1.2rem;">Vamos trabalhar juntos? Entre em contato!</p>
+
+    <div class="contact-container">
+        <a href="https://github.com/Paloma-TI" target="_blank" class="contact-btn github">
+            <i class="fab fa-github"></i> GitHub
+        </a>
+
+        <a href="https://wa.me/5577999307751?text=Olá%20Paloma,%20vi%20seu%20portfólio%20e%20gostaria%20de%20conversar!" target="_blank" class="contact-btn whatsapp">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+
+        <a href="https://www.instagram.com/palloma_rodr?igsh=MXh1OGUzdmY0bHBsdA==" target="_blank" class="contact-btn instagram">
+            <i class="fab fa-instagram"></i> Instagram
+        </a>
+
+        <a href="https://www.linkedin.com/in/paloma-rodrigues-279331249/" target="_blank" class="contact-btn linkedin">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+    </div>
+</section>
+
+<footer style="padding: 50px 10%; background: #000; text-align: center; border-top: 1px solid #111;">
+    <p style="color: #444; font-size: 0.9rem;">
+        &copy; 2026 Paloma Lima | Engenheira de Software & Web Developer
+    </p>
+</footer>
+
+    <footer style="padding: 60px 10%; background: #000; text-align: center; border-top: 1px solid #111;">
+    
+    <p style="color: #fff; font-size: 1.2rem; font-weight: 500; margin-bottom: 10px; letter-spacing: 0.5px;">
+        I turn problems into <code>&lt;solutions/&gt;</code> 🧩🚀
+    </p>
+    
+    <p style="color: #444; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; margin-top: 20px;">
+        &copy; 2026 Paloma Rodrigues Lima | Software Engineer
+    </p>
+
+</footer>
+  
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+  AOS.init({
+    duration: 1000, // Duração da animação em milissegundos (1 segundo)
+    duration: 1000, 
+    once: false, // Mude para false para repetir a animação sempre
+    mirror: true, // Opcional: faz a animação acontecer também ao subir a página
+    //once: true,      // SE QUISER MUDAR Anima apenas uma vez quando o usuário desce a página
+  });
+</script>
+    
 
 </body>
-
 </html>
