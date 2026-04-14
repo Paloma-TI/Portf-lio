@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="shortcut icon" href="not.jpeg" type="image/x-icon">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
 
     <title>Paloma Lima | Engenheira de Software</title>
     
@@ -65,6 +65,12 @@ html, body {
             background: rgba(0, 0, 20, 0.85);
             backdrop-filter: blur(15px);
         }
+
+        .header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* A DISTÂNCIA QUE VOCÊ QUERIA: Aproxime ou afaste aqui! */
+}
 
         .logo { 
             font-weight: 900; 
@@ -596,8 +602,13 @@ html, body {
 <body>
 
     <header>
-        <div class="logo">PALOMA LIMA<span>.</span></div>
-    </header>
+        <div class="header-left">
+ <div class="logo">
+<img src="logo.png" alt="Logo Paloma Lima" style="height: 40px; display: block;">
+</div>
+ <div class="logo">PALOMA LIMA<span>.</span></div>
+        </div>
+</header>
 
     <!-- Botão Flutuante -->
     <a href="https://wa.me/5577999307751" class="whatsapp-fixed" target="_blank">
