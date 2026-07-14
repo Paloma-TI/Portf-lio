@@ -23,7 +23,6 @@
     <link rel="icon" type="image/png" href="logo.png">
 
     
-    
     <style>
         /* --- VARIÁVEIS E RESET --- */
         :root {
@@ -68,12 +67,6 @@ html, body {
             background: rgba(0, 0, 20, 0.85);
             backdrop-filter: blur(15px);
         }
-
-        .header-left {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* A DISTÂNCIA QUE VOCÊ QUERIA: Aproxime ou afaste aqui! */
-}
 
         .logo { 
             font-weight: 900; 
@@ -256,11 +249,7 @@ html, body {
 
 
 
-           /* ==========================================
-   PARTE DO LAN E DO DAST (SEÇÃO DE PROJETOS)
-   ========================================== */
-
- /* ==========================================
+      /* ==========================================
    PARTE DO LAN E DO DAST (SEÇÃO DE PROJETOS)
    ========================================== */
 
@@ -359,7 +348,7 @@ html, body {
 
 .tech-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(minmax(4, 1fr));
     gap: 25px;
     margin-top: 50px;
 }
@@ -610,24 +599,10 @@ html, body {
 </head>
 <body>
 
-    <script>
-        // Gera uma imagem de reserva localmente (sem depender de internet/serviços externos)
-        function imgFallback(el, text, bg, fg) {
-            el.onerror = null; // trava o loop: nunca mais tenta de novo depois da 1ª falha
-            bg = bg || '#111116';
-            fg = fg || '#7a8fff';
-            var svg = "<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'>" +
-                "<rect width='100%' height='100%' fill='" + bg + "'/>" +
-                "<text x='50%' y='50%' fill='" + fg + "' font-family='Montserrat, Arial, sans-serif' font-size='30' font-weight='700' text-anchor='middle' dominant-baseline='middle'>" + text + "</text>" +
-                "</svg>";
-            el.src = "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg);
-        }
-    </script>
-
     <header>
     <div class="header-left">
         <div class="logo" style="display: flex; align-items: center; gap: 10px;">
-            <img src="logo.png" alt="Logo Paloma Lima" style="height: 30px; display: block;" onerror="this.style.display='none'">
+            <img src="logo.png" alt="Logo Paloma Lima" style="height: 30px; display: block;">
             <span style="color: #ffffff;">PALOMA LIMA<span style="color: #007bff;">.</span></span>
         </div>
     </div>
@@ -655,12 +630,12 @@ html, body {
         <div class="profile-glow"></div>
         <div class="profile-glass-border"></div>
         <div class="profile-img-container">
-            <img src="img.png" alt="Paloma Lima" class="profile-img" onerror="imgFallback(this,'Paloma Lima','#111','#fff')">
+            <img src="img.png" alt="Paloma Lima" class="profile-img" onerror="this.src='https://via.placeholder.com/400x400/111/fff?text=Paloma+Lima'">
         </div>
     </div>
 
     <div style="font-size: 0.9rem; opacity: 0.6; letter-spacing: 4px; font-weight: 700;">
-        BRASIL | DISPONÍVEL PARA PROJETOS
+        BRASIL| DISPONÍVEL PARA PROJETOS
     </div>
 </section>
 
@@ -668,7 +643,7 @@ html, body {
     <div style="display: flex; align-items: center; gap: 50px; flex-wrap: wrap;">
         
         <div style="flex: 1; min-width: 300px; position: relative;">
-            <img src="img.png" alt="Paloma Lima" onerror="imgFallback(this,'Paloma Lima','#111','#fff')"
+            <img src="img.png" alt="Paloma Lima" 
                  style="width: 100%; 
                         /* Arredonda superior-direita e inferior-esquerda */
                         border-radius: 110px 0 130px 0; 
@@ -698,38 +673,35 @@ html, body {
 
     <!-- Showcase Mosaico -->
     <section class="showcase-grid">
-    <div class="showcase-item" data-aos="fade-up">
-        <img src="mu.png" alt="Arquitetura" onerror="imgFallback(this,'Architecture','#000','#333')">
-        <div class="showcase-overlay">
-            <p>Clean Code & Architecture</p>
-            <h3>Arquitetura de Sistemas</h3>
+        <div class="showcase-item" data-aos="fade-up">
+            <img src="mu.png" alt="Arquitetura" onerror="this.src='https://via.placeholder.com/800x600/000/333?text=Architecture'">
+            <div class="showcase-overlay">
+                <p>Clean Code & Architecture</p>
+                <h3>Arquitetura de Sistemas</h3>
+            </div>
         </div>
-    </div>
-
-    <div class="showcase-item" data-aos="fade-up" data-aos-delay="100">
-        <img src="usu.png" alt="Consultoria" onerror="imgFallback(this,'Consultancy','#000','#333')">
-        <div class="showcase-overlay">
-            <p>Strategy & Focus</p>
-            <h3>Briefing e Consultoria</h3>
+        <div class="showcase-item" data-aos="fade-up" data-aos-delay="100">
+            <img src="usu.png" alt="Consultoria" onerror="this.src='https://via.placeholder.com/800x600/000/333?text=Consultancy'">
+            <div class="showcase-overlay">
+                <p>Strategy & Focus</p>
+                <h3>Briefing e Consultoria</h3>
+            </div>
         </div>
-    </div>
-
-    <div class="showcase-item" data-aos="fade-up" data-aos-delay="200">
-        <img src="hom.png" alt="Gestão de Projetos" onerror="imgFallback(this,'Project Management','#000','#333')">
-        <div class="showcase-overlay">
-            <p>Agile & Collaboration</p>
-            <h3>Gestão de Projetos</h3>
+        <div class="showcase-item" data-aos="fade-up" data-aos-delay="200">
+            <img src="hom.png" alt="Gestão de Projetos" onerror="this.src='https://via.placeholder.com/800x600/000/333?text=Project+Management'">
+            <div class="showcase-overlay">
+                <p>Agile & Collaboration</p>
+                <h3>Gestão de Projetos</h3>
+            </div>
         </div>
-    </div>
-
-    <div class="showcase-item" data-aos="fade-up" data-aos-delay="300">
-        <img src="ux.png" alt="UX e Trabalho Remoto" onerror="imgFallback(this,'UX Design','#000','#333')">
-        <div class="showcase-overlay">
-            <p>UX/UI & Remote-Ready</p>
-            <h3>Design de Interfaces</h3>
+        <div class="showcase-item" data-aos="fade-up" data-aos-delay="300">
+            <img src="ux.png" alt="UX e Trabalho Remoto" onerror="this.src='https://via.placeholder.com/800x600/000/333?text=UX+Design'">
+            <div class="showcase-overlay">
+                <p>UX/UI & Remote-Ready</p>
+                <h3>Design de Interfaces</h3>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
 
@@ -737,7 +709,7 @@ html, body {
 <div class="projects-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
     
     <div class="project-card">
-        <img src="lan.png" alt="Landing Page" class="project-image" onerror="imgFallback(this,'Landing Page')">
+        <img src="lan.png" alt="Landing Page" class="project-image">
         <div class="project-content">
             <h3>Landing Page Premium</h3>
             <p>Foco em performance, conversão e interfaces que encantam o usuário final.</p>
@@ -750,7 +722,7 @@ html, body {
     </div>
 
     <div class="project-card">
-        <img src="int.png" alt="Dashboards" class="project-image" onerror="imgFallback(this,'Dashboards')">
+        <img src="int.png" alt="Dashboards" class="project-image">
         <div class="project-content">
             <h3>Sistemas de Monitoramento</h3>
             <p>Criação de interfaces para visualização de métricas e controle de processos internos.</p>
@@ -894,7 +866,7 @@ html, body {
     <div style="display: flex; align-items: center; gap: 50px; flex-wrap: wrap;" data-aos="fade-up">
         
         <div style="flex: 1; min-width: 300px;">
-            <img src="sobremim.jpeg" alt="Paloma Lima - Engenheira de Software" onerror="imgFallback(this,'Paloma Lima','#111','#fff')"
+            <img src="sobremim.jpeg" alt="Paloma Lima - Engenheira de Software" 
                  style="width: 100%; /* Arredonda superior-direita e inferior-esquerda */
                         border-radius: 110px 0 130px 0; filter: grayscale(30%); border: 1px solid #222; transition: 0.3s; box-shadow: 0 10px 20px rgba(0,0,0,0.3);">
         </div>
@@ -970,6 +942,7 @@ html, body {
     <script>
   AOS.init({
     duration: 1000, // Duração da animação em milissegundos (1 segundo)
+    duration: 1000, 
     once: false, // Mude para false para repetir a animação sempre
     mirror: true, // Opcional: faz a animação acontecer também ao subir a página
     //once: true,      // SE QUISER MUDAR Anima apenas uma vez quando o usuário desce a página
