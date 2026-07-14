@@ -256,59 +256,59 @@ html, body {
 
 
 
-       /*PARTE DO LAN E DO DAST*/
+           /* ==========================================
+   PARTE DO LAN E DO DAST (SEÇÃO DE PROJETOS)
+   ========================================== */
 
-       /* Container que segura os dois cards lado a lado */
 /* Container que segura os dois cards lado a lado */
 .projects-container {
     display: grid;
     /* Força exatamente 2 colunas em telas grandes */
     grid-template-columns: repeat(2, 1fr); 
-    gap: 20px; /* Diminuí o espaço para caber melhor */
+    gap: 20px; /* Espaço otimizado entre os cards */
     padding: 20px 0;
-    max-width: 1000px; /* Limita a largura total para não espalhar muito */
+    max-width: 1100px; /* Limita a largura total para não espalhar muito */
     margin: 0 auto; /* Centraliza o container na tela */
 }
 
-/* Estilo do Card (Mais compacto) */
+/* Estilo do Card (Compacto e Elegante) */
 .project-card {
     background: #111116; 
-    border-radius: 15px; /* Bordas um pouco menores */
+    border-radius: 15px; 
     overflow: hidden; 
     border: 1px solid #1a1a1a;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease;
     display: flex;
     flex-direction: column;
 }
 
 .project-card:hover {
     transform: translateY(-5px); 
-    border-color: #007bff; 
+    border-color: #007bff; /* Borda acende em azul no hover */
 }
 
-/* AJUSTE CRÍTICO DA IMAGEM (Para o Mac aparecer inteiro) */
+/* AJUSTE DA IMAGEM: Agora larga, preenchendo as laterais sem barras pretas */
 .project-image {
     width: 100%;
-    height: 150px; /* Altura bem menor para forçar a redução */
-    object-fit: contain; /* ESSENCIAL: Faz a imagem inteira caber dentro da altura, sem cortar */
-    background-color: #000; /* Preenche as laterais com preto se a imagem for estreita */
-    padding: 10px 0; /* Dá um respiro para o Mac não encostar nas bordas */
+    height: 280px; /* Altura ideal para telas grandes */
+    object-fit: cover; /* Corta sutilmente para preencher toda a largura do card */
+    object-position: center; /* Mantém o Mac centralizado no corte */
 }
 
-/* Conteúdo interno do card (Mais compacto) */
+/* Conteúdo interno do card */
 .project-content {
-    padding: 15px; /* Menos padding */
+    padding: 15px; 
 }
 
 .project-content h3 {
     color: #fff;
     margin-bottom: 8px;
-    font-size: 1.2rem; /* Fonte um pouco menor */
+    font-size: 1.2rem; 
 }
 
 .project-content p {
     color: #a0a0a0;
-    font-size: 0.85rem; /* Fonte menor */
+    font-size: 0.85rem; 
     line-height: 1.5;
     margin-bottom: 15px;
 }
@@ -329,11 +329,12 @@ html, body {
     border: 1px solid rgba(0, 123, 255, 0.2);
 }
 
-/* Responsividade para Celulares */
-/* Responsividade Total para Celulares */
+/* ==========================================
+   RESPONSIVIDADE (PARA CELULARES)
+   ========================================== */
 @media screen and (max-width: 768px) {
     .projects-container {
-        grid-template-columns: 1fr !important; /* Força 1 coluna */
+        grid-template-columns: 1fr !important; /* Força 1 coluna em telas menores */
         display: grid !important;
         padding: 10px;
     }
@@ -343,8 +344,9 @@ html, body {
         margin-bottom: 20px;
     }
 
+    /* Reduz um pouco a altura no celular para o card não ficar verticalmente gigante */
     .project-image {
-        height: 180px; /* Aumenta um pouco a imagem no celular para ficar melhor */
+        height: 200px; 
     }
 }
        
@@ -605,13 +607,15 @@ html, body {
 <body>
 
     <header>
-        <div class="header-left">
- <div class="logo">
-<img src="logo.png" alt="Logo Paloma Lima" style="height: 40px; display: block;">
-</div>
- <div class="logo">PALOMA LIMA<span>.</span></div>
+    <div class="header-left">
+        <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+            <img src="logo.png" alt="Logo Paloma Lima" style="height: 30px; display: block;">
+            <span style="color: #ffffff;">PALOMA LIMA<span style="color: #007bff;">.</span></span>
         </div>
+    </div>
 </header>
+
+
 
     <!-- Botão Flutuante -->
     <a href="https://wa.me/5577999307751" class="whatsapp-fixed" target="_blank">
@@ -646,7 +650,7 @@ html, body {
     <div style="display: flex; align-items: center; gap: 50px; flex-wrap: wrap;">
         
         <div style="flex: 1; min-width: 300px; position: relative;">
-            <img src="corpo.png" alt="Paloma Lima" 
+            <img src="img.png" alt="Paloma Lima" 
                  style="width: 100%; 
                         /* Arredonda superior-direita e inferior-esquerda */
                         border-radius: 110px 0 130px 0; 
@@ -676,18 +680,32 @@ html, body {
 
     <!-- Showcase Mosaico -->
     <section class="showcase-grid">
-        <div class="showcase-item">
+        <div class="showcase-item" data-aos="fade-up">
             <img src="mu.png" alt="Arquitetura" onerror="this.src='https://via.placeholder.com/800x600/000/333?text=Architecture'">
             <div class="showcase-overlay">
                 <p>Clean Code & Architecture</p>
                 <h3>Arquitetura de Sistemas</h3>
             </div>
         </div>
-        <div class="showcase-item">
-            <img src="not.jpeg" alt="Consultoria" onerror="this.src='https://via.placeholder.com/800x600/000/333?text=Consultancy'">
+        <div class="showcase-item" data-aos="fade-up" data-aos-delay="100">
+            <img src="usu.png" alt="Consultoria" onerror="this.src='https://via.placeholder.com/800x600/000/333?text=Consultancy'">
             <div class="showcase-overlay">
                 <p>Strategy & Focus</p>
                 <h3>Briefing e Consultoria</h3>
+            </div>
+        </div>
+        <div class="showcase-item" data-aos="fade-up" data-aos-delay="200">
+            <img src="hom.png" alt="Gestão de Projetos" onerror="this.src='https://via.placeholder.com/800x600/000/333?text=Project+Management'">
+            <div class="showcase-overlay">
+                <p>Agile & Collaboration</p>
+                <h3>Gestão de Projetos</h3>
+            </div>
+        </div>
+        <div class="showcase-item" data-aos="fade-up" data-aos-delay="300">
+            <img src="ux.png" alt="UX e Trabalho Remoto" onerror="this.src='https://via.placeholder.com/800x600/000/333?text=UX+Design'">
+            <div class="showcase-overlay">
+                <p>UX/UI & Remote-Ready</p>
+                <h3>Design de Interfaces</h3>
             </div>
         </div>
     </section>
@@ -698,7 +716,7 @@ html, body {
 <div class="projects-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
     
     <div class="project-card">
-        <img src="lang.png" alt="Landing Page" class="project-image">
+        <img src="lan.png" alt="Landing Page" class="project-image">
         <div class="project-content">
             <h3>Landing Page Premium</h3>
             <p>Foco em performance, conversão e interfaces que encantam o usuário final.</p>
@@ -711,7 +729,7 @@ html, body {
     </div>
 
     <div class="project-card">
-        <img src="das.png" alt="Dashboards" class="project-image">
+        <img src="int.png" alt="Dashboards" class="project-image">
         <div class="project-content">
             <h3>Sistemas de Monitoramento</h3>
             <p>Criação de interfaces para visualização de métricas e controle de processos internos.</p>
@@ -774,6 +792,18 @@ html, body {
         <i class="fas fa-drafting-compass"></i>
         <h3>Arquitetura</h3>
         <p>Sistemas Robustos e Escaláveis</p>
+    </div>
+
+    <div class="tech-card" data-aos="zoom-in" data-aos-delay="800">
+        <i class="fas fa-pen-ruler"></i>
+        <h3>UX/UI Design</h3>
+        <p>Prototipagem e Interfaces Centradas no Usuário</p>
+    </div>
+
+    <div class="tech-card" data-aos="zoom-in" data-aos-delay="900">
+        <i class="fas fa-people-arrows"></i>
+        <h3>Metodologias Ágeis</h3>
+        <p>Sprints, Reuniões e Colaboração Remota</p>
     </div>
 </div>
 
@@ -850,7 +880,7 @@ html, body {
 
         <div style="flex: 1.5; min-width: 300px;">
             <div class="section-tag" style="margin-bottom: 20px;">Visão & Contexto</div>
-            <h2 style="font-size: 2.0rem; margin-bottom: 30px; font-weight: 900; text-transform: uppercase;">A Responsabilidade na Engenharia</h2>
+            <h2 style="font-size: 2.5rem; margin-bottom: 30px; font-weight: 900; text-transform: uppercase;">A Responsabilidade na Engenharia</h2>
             
             <p style="font-size: 1.1rem; color: #a0a0a0; margin-bottom: 40px; line-height: 1.8;">
                 Para mim, a Engenharia de Software vai além de linhas de código; é uma ferramenta poderosa para moldar o nosso mundo. Em uma era de avanços acelerados, meu compromisso é criar soluções tecnológicas que sejam não apenas eficientes e inovadoras, mas também éticas, transparentes e acessíveis, contribuindo para uma sociedade mais informada e equitativa.
